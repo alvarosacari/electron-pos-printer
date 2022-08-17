@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hubertformin/electron-pos-printer.git"
+    "url": "git+https://github.com/alvarosacari/electron-pos-printer.git"
   },
   "keywords": [
     "electron",
@@ -29,9 +29,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hubertformin/electron-pos-printer/issues"
+    "url": "https://github.com/alvarosacari/electron-pos-printer/issues"
   },
-  "homepage": "https://github.com/Hubertformin/electron-pos-printer#readme",
+  "homepage": "https://github.com/alvarosacari/electron-pos-printer#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^16.9.2",

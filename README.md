@@ -1,10 +1,5 @@
-
-![License](https://img.shields.io/npm/l/electron-pos-printer)
-![Version](https://img.shields.io/npm/v/electron-pos-printer?label=version)
-![Issues](https://img.shields.io/github/issues/Hubertformin/electron-pos-printer)
-
 # Electron-pos-printer
-An electron printer plugin, currently supports 58mm, 
+An electron printer plugin, currently supports 58mm,
 requires electron >= 4.x.x.
 
 ### Installation
@@ -23,7 +18,7 @@ const {PosPrinter} = require('electron').remote.require("electron-pos-printer");
 ```
 ### Demo
 
-Check out this [Demo](https://github.com/fssonca/electron-printer ) by [fssonca](https://github.com/fssonca) 
+Check out this [Demo](https://github.com/fssonca/electron-printer ) by [fssonca](https://github.com/fssonca)
 
 ```js
 const {PosPrinter} = require("electron-pos-printer");
@@ -41,7 +36,7 @@ const options = {
 
 const data = [
    {
-     type: 'image',                                       
+     type: 'image',
      path: path.join(__dirname, 'assets/banner.png'),     // file path
      position: 'center',                                  // position of image: 'left' | 'center' | 'right'
      width: '60px',                                           // width of image in px; default: auto
@@ -65,7 +60,7 @@ const data = [
       fontsize: 8,
    },{
      type: 'qrCode',
-      value: 'https://github.com/Hubertformin/electron-pos-printer',
+      value: 'https://github.com/alvarosacari/electron-pos-printer',
       height: 55,
       width: 55,
       style: 'margin: 10 20px 20 20px'
@@ -130,8 +125,8 @@ import * as path from "path";
 
 const options: PosPrintOptions = {
    preview: false,
-   width: '170px',       
-   margin: '0 0 0 0',    
+   width: '170px',
+   margin: '0 0 0 0',
    copies: 1,
    printerName: 'XP-80C',
    timeOutPerLine: 400,
@@ -140,7 +135,7 @@ const options: PosPrintOptions = {
 
 const data: PosPrintData[] = [
    {
-     type: 'image',                                       
+     type: 'image',
      path: path.join(__dirname, 'assets/banner.png'),     // file path
      position: 'center',                                  // position of image: 'left' | 'center' | 'right'
      width: '60px',                                           // width of image in px; default: auto
@@ -164,7 +159,7 @@ const data: PosPrintData[] = [
       fontsize: 8,
    },{
      type: 'qrCode',
-      value: 'https://github.com/Hubertformin/electron-pos-printer',
+      value: 'https://github.com/alvarosacari/electron-pos-printer',
       height: 55,
       width: 55,
       style: 'margin: 10 20px 20 20px'
@@ -224,10 +219,10 @@ PosPrinter.print(data, options)
 | copies     | (number) number of copies to print |
 | preview      | (boolean) preview in a window, default is false |
 | width      | (string) width of a page       |
-| margin | (string)  margin of a page, css values can be used   | 
-| printerName | (string) the printer's name      | 
-| timeOutPerLine | (number) timeout per line, default is 200      | 
-| silent | (boolean) To print silently without printer selection pop-up, default is true | 
+| margin | (string)  margin of a page, css values can be used   |
+| printerName | (string) the printer's name      |
+| timeOutPerLine | (number) timeout per line, default is 200      |
+| silent | (boolean) To print silently without printer selection pop-up, default is true |
 | pageSize | (SizeOptions) Specify the width and height of the print out page |
 
 
@@ -255,6 +250,6 @@ PosPrinter.print(data, options)
  - Hubert Formin
  - hformin@gmail.com
  - Twitter: @hformin
- 
+
  [<img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" >](https://www.buymeacoffee.com/hformin)
- 
+
