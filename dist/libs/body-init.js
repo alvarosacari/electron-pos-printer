@@ -32,13 +32,21 @@ async function renderDataToHTML(event, arg) {
             }
         return;
         case 'image':
-            await getImageFromPath(arg.line)
-                .then(img => {
-                    body.append(img);
-                    event.sender.send('render-line-reply', {status: true, error: null});
-                }).catch(e => {
-                event.sender.send('render-line-reply', {status: false, error: e.toString()});
-            })
+            const pathImage = arg.line.path
+            if (pathImage.includes('base64')) {
+                const img = getImageFromBase64(arg.line)
+                body.append(img);
+                event.sender.send('render-line-reply', {status: true, error: null});
+            }
+            else {
+                await getImageFromPath(arg.line)
+                    .then(img => {
+                        body.append(img);
+                        event.sender.send('render-line-reply', {status: true, error: null});
+                    }).catch(e => {
+                    event.sender.send('render-line-reply', {status: false, error: e.toString()});
+                    })
+            }
         return;
         case 'qrCode':
             try {
@@ -245,4 +253,19 @@ function getImageFromPath(arg) {
         img_con.prepend(img);
         resolve(img_con);
     });
+}
+
+function getImageFromBase64 (arg) {
+    const img_content = $(`<div style="width: 100%;text-align:${arg.position ? arg.position : 'left'}"></div>`);
+
+    arg.style = arg.style ? arg.style : '';
+    const imgSrc = arg.path ? arg.path : arg.value
+    const img = $(`<img src="${imgSrc}" style="height: ${arg.height ? arg.height : '50px'};width: ${arg.width ? arg.width : 'auto'};${arg.style}" />`);
+    if (arg.css) {
+        for (const key in arg.css) {
+            const item = arg.css[key];
+            img.css(key, item);
+        }
+    }
+    img_content.prepend(img);
 }
