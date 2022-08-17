@@ -268,4 +268,6 @@ function getImageFromBase64 (arg) {
         }
     }
     img_content.prepend(img);
+
+    return img_content;
 }
